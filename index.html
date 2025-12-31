@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magical Christmas Celebrations</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --red: #e63946;
+            --green: #2a9d8f;
+            --gold: #f4a261;
+            --white: #f1faee;
+            --dark: #1d3557;
+            --light-red: #ffcad4;
+            --light-green: #ccd5ae;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* Snowfall Effect */
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            z-index: 9999;
+            color: #fff;
+            user-select: none;
+            pointer-events: none;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--red), var(--dark));
+            color: var(--white);
+            padding: 1rem 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--gold);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: url('https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            color: var(--white);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--red);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            background-color: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            margin-left: 1rem;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--red);
+        }
+
+        /* Countdown Timer */
+        .countdown {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .countdown-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .countdown-box {
+            flex: 1;
+            min-width: 120px;
+            margin: 0.5rem;
+            padding: 1rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .countdown-box span {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--red);
+            display: inline-block;
+            position: relative;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--gold);
+            border-radius: 2px;
+        }
+
+        /* Events Section */
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .event-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .event-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .event-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .event-card:hover .event-img img {
+            transform: scale(1.1);
+        }
+
+        .event-content {
+            padding: 1.5rem;
+        }
+
+        .event-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .event-content .date {
+            display: flex;
+            align-items: center;
+            color: var(--red);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .event-content .date i {
+            margin-right: 0.5rem;
+        }
+
+        .event-content p {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        /* Dinner Section */
+        .dinner-section {
+            background-color: var(--light-red);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-item {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .menu-item i {
+            font-size: 2.5rem;
+            color: var(--red);
+            margin-bottom: 1rem;
+        }
+
+        .menu-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .menu-item p {
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-weight: 700;
+            color: var(--green);
+            font-size: 1.2rem;
+        }
+
+        /* Dressing Styles */
+        .dressing-section {
+            background-color: var(--light-green);
+        }
+
+        .outfit-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .outfit-card {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 300px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .outfit-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .outfit-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .outfit-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            padding: 1.5rem;
+            color: var(--white);
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .outfit-card:hover .outfit-overlay {
+            transform: translateY(0);
+        }
+
+        .outfit-overlay h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Couple Events */
+        .couple-events {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .couple-event {
+            display: flex;
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .couple-event:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .couple-img {
+            flex: 1;
+            min-height: 200px;
+        }
+
+        .couple-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .couple-content {
+            flex: 1;
+            padding: 1.5rem;
+        }
+
+        .couple-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .couple-content .date {
+            display: flex;
+            align-items: center;
+            color: var(--red);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .couple-content .date i {
+            margin-right: 0.5rem;
+        }
+
+        .couple-content p {
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .newsletter-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .newsletter h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter p {
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            font-size: 1rem;
+        }
+
+        .newsletter-form button {
+            background-color: var(--red);
+            color: var(--white);
+            border: none;
+            padding: 0 1.5rem;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background-color: var(--gold);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--gold);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            opacity: 1;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--red);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .couple-event {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: var(--dark);
+                padding: 2rem;
+                transition: right 0.3s ease;
+                z-index: 1000;
+            }
+
+            nav.active {
+                right: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                margin-top: 3rem;
+            }
+
+            nav ul li {
+                margin: 1rem 0;
+            }
+
+            .close-menu {
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                font-size: 1.5rem;
+                background: none;
+                border: none;
+                color: var(--white);
+                cursor: pointer;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .section {
+                padding: 3rem 1.5rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .countdown-box {
+                min-width: 80px;
+            }
+
+            .countdown-box span {
+                font-size: 2rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form input {
+                border-radius: 30px;
+                margin-bottom: 1rem;
+            }
+
+            .newsletter-form button {
+                border-radius: 30px;
+                padding: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+            }
+
+            .countdown-box {
+                min-width: 60px;
+                padding: 0.5rem;
+            }
+
+            .countdown-box span {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Toggle Theme Button */
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--red);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Snowfall Effect -->
+    <div id="snowflakes-container"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo">
+                <i class="fas fa-tree"></i>
+                <span>Christmas Magic</span>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <button class="close-menu" id="closeMenu">
+                </button>
+                <ul>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#dinners">Dinners</a></li>
+                    <li><a href="#dressing">Dressing</a></li>
+                    <li><a href="#couples">Couples</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="fade-in">Experience the Magic of Christmas</h1>
+            <p class="fade-in">Discover enchanting events, delightful dinners, and romantic couple activities this holiday season</p>
+            <div>
+                <a href="#events" class="btn slide-up">Explore Events</a>
+                <a href="#dinners" class="btn btn-outline slide-up">View Menus</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Timer -->
+    <section class="countdown">
+        <div class="countdown-container">
+            <div class="countdown-box">
+                <span id="days">00</span>
+                Days
+            </div>
+            <div class="countdown-box">
+                <span id="hours">00</span>
+                Hours
+            </div>
+            <div class="countdown-box">
+                <span id="minutes">00</span>
+                Minutes
+            </div>
+            <div class="countdown-box">
+                <span id="seconds">00</span>
+                Seconds
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="section" id="events">
+        <div class="section-title">
+            <h2>Festive Events</h2>
+        </div>
+        <div class="events-grid">
+            <div class="event-card slide-up">
+                <div class="event-img">
+                    <img src="market.jpg" alt="Christmas Market">
+                </div>
+                <div class="event-content">
+                    <h3>Christmas Market</h3>
+                    <div class="date">
+                        <i class="far fa-calendar-alt"></i>
+                        December 10-24, 2023
+                    </div>
+                    <p>Explore our magical Christmas market with handmade crafts, delicious treats, and festive entertainment for the whole family.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+            <div class="event-card slide-up">
+                <div class="event-img">
+                    <img src="santa.jpg" alt="Santa's Workshop">
+                </div>
+                <div class="event-content">
+                    <h3>Santa's Workshop</h3>
+                    <div class="date">
+                        <i class="far fa-calendar-alt"></i>
+                        December 15-23, 2023
+                    </div>
+                    <p>Bring the kids to meet Santa, take photos, and enjoy interactive holiday activities in our enchanted workshop.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+            <div class="event-card slide-up">
+                <div class="event-img">
+                    <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Christmas Carols">
+                </div>
+                <div class="event-content">
+                    <h3>Christmas Carols Night</h3>
+                    <div class="date">
+                        <i class="far fa-calendar-alt"></i>
+                        December 20, 2023
+                    </div>
+                    <p>Join us for an evening of traditional Christmas carols performed by local choirs under the stars with hot cocoa.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dinner Section -->
+    <section class="section dinner-section" id="dinners">
+        <div class="section-title">
+            <h2>Festive Dinners</h2>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-item slide-up">
+                <i class="fas fa-utensils"></i>
+                <h3>Traditional Christmas Feast</h3>
+                <p>Roast turkey with all the trimmings, Christmas pudding, and mulled wine</p>
+                <div class="price">$49.99 per person</div>
+                <a href="#" class="btn">Reserve Table</a>
+            </div>
+            <div class="menu-item slide-up">
+                <i class="fas fa-glass-cheers"></i>
+                <h3>Christmas Eve Gala</h3>
+                <p>Five-course gourmet dinner with live jazz and champagne toast</p>
+                <div class="price">$89.99 per person</div>
+                <a href="#" class="btn">Reserve Table</a>
+            </div>
+            <div class="menu-item slide-up">
+                <i class="fas fa-cookie-bite"></i>
+                <h3>Family Christmas Brunch</h3>
+                <p>All-you-can-eat buffet with Santa visit for kids and DIY waffle station</p>
+                <div class="price">$29.99 per adult | $14.99 per child</div>
+                <a href="#" class="btn">Reserve Table</a>
+            </div>
+            <div class="menu-item slide-up">
+                <i class="fas fa-mug-hot"></i>
+                <h3>Christmas Afternoon Tea</h3>
+                <p>Elegant tea service with festive pastries, sandwiches, and specialty teas</p>
+                <div class="price">$35.99 per person</div>
+                <a href="#" class="btn">Reserve Table</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dressing Section -->
+    <section class="section dressing-section" id="dressing">
+        <div class="section-title">
+            <h2>Festive Outfits</h2>
+        </div>
+        <div class="outfit-gallery">
+            <div class="outfit-card slide-up">
+                <img src="gown.webp" alt="Elegant Christmas Dress">
+                <div class="outfit-overlay">
+                    <h3>Elegant Evening Gown</h3>
+                    <p>Perfect for Christmas galas and formal dinners</p>
+                </div>
+            </div>
+            <div class="outfit-card slide-up">
+                <img src="Christmas-sweater-bundt-cake-3-1000x750.webp" alt="Cozy Christmas Sweater">
+                <div class="outfit-overlay">
+                    <h3>Cozy Christmas Sweater</h3>
+                    <p>Ideal for casual gatherings and family photos</p>
+                </div>
+            </div>
+            <div class="outfit-card slide-up">
+                <img src="party.jpg" alt="Christmas Party Outfit">
+                <div class="outfit-overlay">
+                    <h3>Festive Party Outfit</h3>
+                    <p>Sparkly and fun for office parties and nights out</p>
+                </div>
+            </div>
+            <div class="outfit-card slide-up">
+                <img src="matching.jpg" alt="Couple Christmas Outfits">
+                <div class="outfit-overlay">
+                    <h3>Matching Couple Outfits</h3>
+                    <p>Adorable coordinated looks for Christmas photos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Couple Events Section -->
+    <section class="section" id="couples">
+        <div class="section-title">
+            <h2>Romantic Christmas for Couples</h2>
+        </div>
+        <div class="couple-events">
+            <div class="couple-event slide-up">
+                <div class="couple-img">
+                    <img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Christmas Lights Tour">
+                </div>
+                <div class="couple-content">
+                    <h3>Christmas Lights Carriage Ride</h3>
+                    <div class="date">
+                        <i class="far fa-calendar-alt"></i>
+                        December 1-31, 2025
+                    </div>
+                    <p>Snuggle under blankets as you tour the city's best Christmas displays in a horse-drawn carriage with hot chocolate.</p>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+            <div class="couple-event slide-up">
+                <div class="couple-img">
+                    <img src="cooking.jpg" alt="Couples Cooking Class">
+                </div>
+                <div class="couple-content">
+                    <h3>Couples Christmas Cooking Class</h3>
+                    <div class="date">
+                        <i class="far fa-calendar-alt"></i>
+                        December 12, 2025
+                    </div>
+                    <p>Learn to make romantic holiday dishes together with our expert chef, including wine pairings.</p>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter" id="contact">
+        <div class="newsletter-container">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter for exclusive event announcements, special offers, and holiday tips!</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Christmas Magic</h3>
+                <p>Making your holiday season brighter with magical events, dining, and experiences.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#dinners">Dinners</a></li>
+                    <li><a href="#dressing">Dressing</a></li>
+                    <li><a href="#couples">Couples</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Christmas Lane, North Pole</li>
+                    <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+                    <li><i class="fas fa-envelope"></i> hello@christmasmagic.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Christmas Magic. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMenu = document.getElementById('closeMenu');
+        const mainNav = document.getElementById('mainNav');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.add('active');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mainNav.classList.remove('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+            });
+        });
+
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            const christmas = new Date(now.getFullYear(), 11, 25); // December 25
+            
+            // If Christmas has passed this year, set for next year
+            if (now > christmas) {
+                christmas.setFullYear(christmas.getFullYear() + 1);
+            }
+            
+            const diff = christmas - now;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+
+        // Snowfall Effect
+        function createSnowflakes() {
+            const snowflakesContainer = document.getElementById('snowflakes-container');
+            const snowflakeCount = 50;
+            
+            for (let i = 0; i < snowflakeCount; i++) {
+                setTimeout(() => {
+                    const snowflake = document.createElement('div');
+                    snowflake.className = 'snowflake';
+                    snowflake.innerHTML = '❄';
+                    
+                    // Random size between 10 and 20px
+                    const size = Math.random() * 10 + 10;
+                    snowflake.style.fontSize = `${size}px`;
+                    
+                    // Random left position
+                    snowflake.style.left = `${Math.random() * 100}vw`;
+                    
+                    // Random animation duration between 5 and 15 seconds
+                    snowflake.style.animationDuration = `${Math.random() * 10 + 5}s`;
+                    
+                    // Random opacity between 0.5 and 1
+                    snowflake.style.opacity = Math.random() * 0.5 + 0.5;
+                    
+                    snowflakesContainer.appendChild(snowflake);
+                    
+                    // Remove snowflake after it falls
+                    setTimeout(() => {
+                        snowflake.remove();
+                    }, parseFloat(snowflake.style.animationDuration) * 1000);
+                }, Math.random() * 5000);
+            }
+        }
+
+        // Create snowflakes initially and then every 5 seconds
+        createSnowflakes();
+        setInterval(createSnowflakes, 5000);
+
+        // Scroll Animation
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.slide-up');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.classList.add('slide-up');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        let darkMode = false;
+
+        themeToggle.addEventListener('click', () => {
+            darkMode = !darkMode;
+            
+            if (darkMode) {
+                document.body.classList.add('dark-theme');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                themeToggle.style.backgroundColor = '#f4a261';
+            } else {
+                document.body.classList.remove('dark-theme');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                themeToggle.style.backgroundColor = '#e63946';
+            }
+        });
+
+        // Add dark theme styles dynamically
+        const styleElement = document.createElement('style');
+        styleElement.textContent = `
+            .dark-theme {
+                background-color: #121212;
+                color: #f1faee;
+            }
+            
+            .dark-theme .event-card,
+            .dark-theme .menu-item,
+            .dark-theme .couple-event {
+                background-color: #1e1e1e;
+                color: #f1faee;
+            }
+            
+            .dark-theme .event-content h3,
+            .dark-theme .menu-item h3,
+            .dark-theme .couple-content h3 {
+                color: #f1faee;
+            }
+            
+            .dark-theme .event-content p,
+            .dark-theme .menu-item p,
+            .dark-theme .couple-content p {
+                color: #ccc;
+            }
+            
+            .dark-theme .section-title h2 {
+                color: #f4a261;
+            }
+        `;
+        document.head.appendChild(styleElement);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
